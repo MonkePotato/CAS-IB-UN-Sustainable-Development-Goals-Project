@@ -135,9 +135,9 @@ footer {
   margin-top: 120px;
 }
 
-/* ==========================
-PART 6 UPGRADES 
-========================== */
+/* =======================================
+   PART 6 UPGRADES & LIGHT MODE SYSTEM
+======================================= */
 
 nav.scrolled {
   background: rgba(0, 0, 0, .75);
@@ -149,29 +149,78 @@ nav.scrolled {
   cursor: pointer;
 }
 
-.light {
-  background: #eef7ff;
-  color: #111;
-}
-
-/* Switches the dark blue moving gradient to light blue in light mode */
-.light .background {
-  background: linear-gradient(120deg, #eef7ff, #e0f2fe, #bae6fd, #eef7ff);
-}
-
-.light .card,
-.light .goal-card,
-.light .action-card {
-  background: white;
-  color: #111;
-}
-
 #theme-toggle {
   border: none;
   background: none;
   font-size: 20px;
   cursor: pointer;
 }
+
+/* --- THE NEW LIGHT MODE GLOBAL OVERRIDES --- */
+
+/* 1. Base Body and Layout background colors */
+.light {
+  background: #f4f7fa;
+  color: #1e293b;
+}
+
+/* 2. Shifting light mode background animation grid */
+.light .background {
+  background: linear-gradient(120deg, #f8fafc, #edf2f7, #e2e8f0, #f8fafc);
+}
+
+/* 3. Universal typography clean sweep for headings and text paragraphs */
+.light h1, 
+.light h2, 
+.light h3, 
+.light p,
+.light .logo {
+  color: #0f172a !important;
+}
+
+/* 4. Complete Navigation overrides */
+.light nav a {
+  color: #334155;
+}
+
+.light nav a:hover {
+  color: #0284c7; /* Rich deep blue instead of cyan */
+}
+
+/* 5. Interactive Cards & structural grids */
+.light .card,
+.light .image-card,
+.light .goal-card,
+.light .action-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+}
+
+/* 6. Glowing highlight spans and custom accents */
+.light .hero span,
+.light footer strong {
+  color: #0284c7;
+}
+
+/* 7. Secondary button adjustments */
+.light .secondary {
+  border: 2px solid #0284c7;
+  color: #0284c7;
+}
+
+.light .secondary:hover {
+  background: #0284c7;
+  color: white;
+}
+
+/* 8. Modern clean footer styling */
+.light footer {
+  background: #e2e8f0;
+  border-top: 1px solid #cbd5e1;
+}
+
+/* ------------------------------------------- */
 
 @media(max-width: 900px) {
   .menu-toggle {
