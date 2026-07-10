@@ -8,15 +8,11 @@ text-align:center;
 
 }
 
-
-
 .goals-hero h1{
 
 font-size:3.5rem;
 
 }
-
-
 
 .goals-hero p{
 
@@ -28,111 +24,74 @@ font-size:1.2rem;
 
 }
 
-
-
-
 .sdg-grid{
-
 
 padding:
 
 50px 10% 100px;
 
-
 display:grid;
-
 
 grid-template-columns:
 
 repeat(auto-fit,minmax(250px,1fr));
 
-
 gap:30px;
 
-
 }
-
-
-
-
 
 .sdg-card{
 
-
 background:
 
-rgba(255,255,255,.08);
+var(--card);
 
+border:1px solid var(--card-border);
 
 border-radius:25px;
 
-
 padding:30px;
-
 
 text-align:center;
 
-
 backdrop-filter:blur(15px);
-
 
 transition:.4s;
 
-
 }
 
-
-
 .sdg-card:hover{
-
 
 transform:
 
 translateY(-15px);
 
-
 box-shadow:
 
-0 0 40px #00d2ff55;
-
+0 0 40px var(--accent-shadow);
 
 }
-
-
 
 .sdg-card img{
 
-
 width:100px;
-
 
 height:100px;
 
-
 transition:.3s;
 
-
 }
-
-
 
 .sdg-card:hover img{
 
-
 transform:scale(1.15);
-
 
 }
 
-
-
 .sdg-card h2{
 
-
-color:#66fcf1;
-
+color:var(--accent);
 
 font-size:1.3rem;
-
 
 }
