@@ -1,87 +1,76 @@
-/* ... (Keep all your existing code above the Part 6 section) ... */
+/* --- DEEPER PASTEL GREENISH-BLUE LIGHT MODE OVERRIDES --- */
 
-/* =======================================
-   PART 6 UPGRADES & LIGHT MODE SYSTEM
-======================================= */
-
-nav.scrolled {
-  background: rgba(0, 0, 0, .75);
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-#theme-toggle {
-  border: none;
-  background: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* --- LIGHT MODE ONLY OVERRIDES --- */
-
-/* 1. Base light mode layout (Pastel greenish-blue) */
+/* 1. Base light mode layout - Darker text color for better contrast */
 .light {
   background: #b2c9c9 !important;
-  color: #081414 !important;
+  color: #081010 !important;
 }
 
-/* 2. Overwrite the background gradient for light mode */
+/* 2. Fluid background mesh */
 .light .background {
   background: linear-gradient(120deg, #cbdcdc, #b2c9c9, #99b5b5, #cbdcdc) !important;
+  background-size: 400% 400%;
 }
 
-/* 3. Navigation bar transition for light mode (Relative darkening) */
-.light nav {
-  background: rgba(255, 255, 255, 0.2) !important;
-}
-
+/* 3. SCROLLING BAR FIX: Darker background on scroll to ensure dark text pops */
 .light nav.scrolled {
-  background: rgba(140, 165, 165, 0.9) !important; 
-  border-bottom: 1px solid rgba(8, 20, 20, 0.2);
+  background: rgba(178, 201, 201, 0.95) !important; 
+  border-bottom: 1px solid rgba(8, 16, 16, 0.2);
+  backdrop-filter: blur(25px);
 }
 
-/* 4. Ensure ALL text in light mode is high-contrast charcoal */
+/* 4. Complete typography suite: Deep charcoal for maximum readability */
 .light h1, 
 .light h2, 
 .light h3, 
-.light p, 
-.light span, 
-.light .logo, 
-.light footer p, 
-.light footer strong {
-  color: #081414 !important;
+.light p,
+.light .logo,
+.light footer p {
+  color: #081010 !important;
 }
 
-/* 5. Navigation links visibility in light mode */
+/* 5. Navigation link adaptations: Deep dark text for high visibility */
 .light nav a {
-  color: #081414 !important;
+  color: #081010 !important;
+  font-weight: 600;
 }
 
 .light nav a:hover {
+  color: #005a66 !important; /* Dark teal hover effect */
+}
+
+/* 6. Clean structural containers */
+.light .card,
+.light .image-card,
+.light .goal-card,
+.light .action-card {
+  background: #ffffff !important;
+  border: 1px solid #7a9999 !important;
+  color: #081010 !important;
+}
+
+/* 7. Highlights and anchor tag configurations */
+.light .hero span {
   color: #005a66 !important;
 }
 
-/* 6. Cards and containers visibility */
-.light .card,
-.light .image-card {
-  background: #ffffff !important;
-  border: 1px solid #7a9999 !important;
+.light footer strong {
+  color: #005a66 !important;
 }
 
-/* 7. Button visibility */
-.light .btn {
+/* 8. Secondary outline interactive button parameters */
+.light .secondary {
+  border: 2px solid #005a66 !important;
+  color: #005a66 !important;
+}
+
+.light .secondary:hover {
   background: #005a66 !important;
-  color: white !important;
+  color: #ffffff !important;
 }
 
-/* 8. Bottom banner adjustments */
+/* 9. Seamless lighter pastel bottom banner */
 .light footer {
   background: #cbdcdc !important;
   border-top: 1px solid #b2c9c9 !important;
 }
-
-/* ... (Keep your existing Part 7 and Media Queries below) ... */
