@@ -80,7 +80,7 @@ width:4px;
 
 height:4px;
 
-background:#66fcf1;
+background:var(--accent);
 
 border-radius:50%;
 
@@ -92,10 +92,7 @@ float 10s infinite;
 
 }
 
-
-
 @keyframes float{
-
 
 0%{
 
@@ -104,7 +101,6 @@ translateY(0);
 
 }
 
-
 50%{
 
 transform:
@@ -112,14 +108,12 @@ translateY(-100px);
 
 }
 
-
 100%{
 
 transform:
 translateY(0);
 
 }
-
 
 }
 
