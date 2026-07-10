@@ -20,12 +20,6 @@ background-position:0% 50%;
 
 }
 
-.hero{
-
-animation:fade 1.5s ease;
-
-}
-
 @keyframes fade{
 
 from{
@@ -43,12 +37,6 @@ opacity:1;
 transform:translateY(0);
 
 }
-
-}
-
-.card{
-
-animation:up 1.5s;
 
 }
 
@@ -72,6 +60,40 @@ transform:translateY(0);
 
 }
 
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-100px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.hero{
+
+animation:fade 1.5s ease;
+
+}
+
+.card{
+
+animation:up 1.2s ease;
+
+}
+
 .particle{
 
 position:absolute;
@@ -86,34 +108,9 @@ border-radius:50%;
 
 opacity:.7;
 
-animation:
+animation:float 10s ease-in-out infinite;
 
-float 10s infinite;
-
-}
-
-@keyframes float{
-
-0%{
-
-transform:
-translateY(0);
-
-}
-
-50%{
-
-transform:
-translateY(-100px);
-
-}
-
-100%{
-
-transform:
-translateY(0);
-
-}
+will-change:transform;
 
 }
 
@@ -124,11 +121,18 @@ translateY(0);
 
 opacity:0;
 
-transform:
-translateY(40px);
+transform:translateY(40px);
 
 transition:
 
-all .8s ease;
+opacity .8s ease,
+
+transform .8s ease;
+
+will-change:
+
+opacity,
+
+transform;
 
 }
