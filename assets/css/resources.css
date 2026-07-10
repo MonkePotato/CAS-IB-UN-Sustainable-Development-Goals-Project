@@ -1,16 +1,16 @@
 .resource-hero{
 
-padding-top:170px;
+padding:170px 10% 80px;
 
 text-align:center;
-
-padding-bottom:60px;
 
 }
 
 .resource-hero h1{
 
-font-size:3.5rem;
+font-size:3.8rem;
+
+margin-bottom:20px;
 
 }
 
@@ -20,15 +20,29 @@ max-width:850px;
 
 margin:auto;
 
-font-size:1.2rem;
+font-size:1.15rem;
+
+line-height:1.8;
+
+color:var(--text-muted);
 
 }
 
 .resource-section{
 
-padding:70px 10%;
+padding:80px 10%;
 
 text-align:center;
+
+}
+
+.resource-section h2{
+
+font-size:2.8rem;
+
+margin-bottom:20px;
+
+color:var(--accent);
 
 }
 
@@ -42,93 +56,51 @@ repeat(auto-fit,minmax(300px,1fr));
 
 gap:35px;
 
-margin-top:40px;
+margin-top:45px;
 
 }
 
 .resource-card{
 
-padding:40px;
-
-background:
-
-var(--card);
+background:var(--card);
 
 border:1px solid var(--card-border);
 
-border-radius:25px;
+border-radius:var(--radius);
 
-backdrop-filter:blur(15px);
+padding:35px;
 
-transition:.3s;
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+box-shadow:var(--shadow);
 
 cursor:pointer;
 
 overflow:hidden;
 
+transition:.35s;
+
 }
 
 .resource-card:hover{
 
+background:var(--card-hover);
+
 transform:translateY(-10px);
 
-box-shadow:0 0 30px var(--accent-shadow);
+box-shadow:var(--glow);
 
 }
 
-.resource-card h3{
+.resource-card.active{
 
-color:var(--accent);
+background:var(--card-hover);
 
-font-size:1.5rem;
+border-color:var(--accent);
 
-}
-
-.resource-card a{
-
-display:inline-block;
-
-margin-top:25px;
-
-padding:12px 30px;
-
-border-radius:50px;
-
-background:var(--accent);
-
-color:var(--accent-text);
-
-text-decoration:none;
-
-font-weight:bold;
-
-transition:.3s;
-
-}
-
-.resource-card a:hover{
-
-box-shadow:0 0 18px var(--accent-shadow);
-
-}
-
-.embed-box{
-
-max-width:850px;
-
-margin:auto;
-
-padding:50px;
-
-background:
-
-var(--card);
-
-border:1px solid var(--card-border);
-
-border-radius:25px;
-
-backdrop-filter:blur(15px);
+box-shadow:var(--glow);
 
 }
 
@@ -136,19 +108,19 @@ backdrop-filter:blur(15px);
 
 position:relative;
 
-text-align:center;
+padding-right:40px;
 
-padding-right:35px;
+text-align:center;
 
 }
 
 .resource-header h3{
 
+font-size:1.6rem;
+
+color:var(--accent);
+
 margin:0;
-
-text-align:center;
-
-width:100%;
 
 }
 
@@ -156,19 +128,19 @@ width:100%;
 
 position:absolute;
 
-right:0;
-
 top:50%;
+
+right:0;
 
 transform:translateY(-50%);
 
 font-size:2rem;
 
-font-weight:bold;
+font-weight:700;
 
 color:var(--accent);
 
-transition:.4s;
+transition:.35s;
 
 }
 
@@ -180,37 +152,37 @@ transform:translateY(-50%) rotate(45deg);
 
 .resource-links{
 
-max-height:0;
-
-overflow:hidden;
-
-opacity:0;
-
 display:flex;
 
 flex-direction:column;
 
 gap:12px;
 
+max-height:0;
+
+opacity:0;
+
+overflow:hidden;
+
 margin-top:0;
 
 transition:
 
-max-height .5s ease,
+max-height .45s ease,
 
-opacity .35s ease,
+opacity .3s ease,
 
-margin-top .35s ease;
+margin-top .3s ease;
 
 }
 
 .resource-card.active .resource-links{
 
-max-height:250px;
+max-height:400px;
 
 opacity:1;
 
-margin-top:20px;
+margin-top:22px;
 
 }
 
@@ -218,17 +190,17 @@ margin-top:20px;
 
 display:block;
 
-padding:12px 16px;
+padding:14px 18px;
 
-border-radius:12px;
-
-background:var(--card-secondary);
+background:var(--surface);
 
 border:1px solid var(--card-border);
 
-color:var(--text);
+border-radius:14px;
 
 text-decoration:none;
+
+color:var(--text);
 
 transition:.3s;
 
@@ -242,14 +214,76 @@ color:var(--accent-text);
 
 transform:translateX(8px);
 
-box-shadow:0 0 18px var(--accent-shadow);
+box-shadow:var(--glow);
 
 }
 
-.resource-card.active{
+.embed-box{
 
-box-shadow:0 0 35px var(--accent-shadow);
+max-width:900px;
 
-border:1px solid var(--accent);
+margin:60px auto;
+
+padding:50px;
+
+background:var(--card);
+
+border:1px solid var(--card-border);
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+}
+
+@media(max-width:900px){
+
+.resource-hero{
+
+padding:150px 8% 70px;
+
+}
+
+.resource-hero h1{
+
+font-size:2.8rem;
+
+}
+
+.resource-section{
+
+padding:70px 8%;
+
+}
+
+.resource-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.resource-hero h1{
+
+font-size:2.2rem;
+
+}
+
+.resource-card,
+
+.embed-box{
+
+padding:30px;
+
+}
+
+.resource-header h3{
+
+font-size:1.35rem;
+
+}
 
 }
