@@ -255,8 +255,6 @@ cursor:pointer;
 
 
 .light{
-
-.light{
     background:#f4f9ff;
     color:#13233a;
 }
@@ -372,14 +370,6 @@ cursor:pointer;
 }
 
 
-
-.light .card,
-.light .goal-card,
-.light .action-card{
-
-background:white;
-
-color:#111;
 
 }
 
