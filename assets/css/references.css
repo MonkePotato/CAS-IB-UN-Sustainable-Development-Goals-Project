@@ -1,0 +1,251 @@
+/* ==========================
+REFERENCES PAGE
+========================== */
+
+
+
+/* ==========================
+REFERENCES DESIGN
+========================== */
+
+
+
+.reference-hero{
+
+
+padding-top:170px;
+
+
+text-align:center;
+
+
+padding-bottom:60px;
+
+
+}
+
+
+
+.reference-hero h1{
+
+
+font-size:3.5rem;
+
+
+}
+
+
+
+.reference-hero p{
+
+
+max-width:850px;
+
+margin:auto;
+
+font-size:1.2rem;
+
+
+}
+
+
+
+
+
+.reference-section{
+
+
+padding:60px 10% 100px;
+
+
+display:grid;
+
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(320px,1fr));
+
+
+gap:35px;
+
+
+}
+
+
+
+
+
+.reference-card{
+
+
+padding:40px;
+
+
+background:
+
+rgba(255,255,255,.08);
+
+
+border-radius:25px;
+
+
+backdrop-filter:blur(15px);
+
+
+transition:.3s;
+
+
+}
+
+
+
+.reference-card:hover{
+
+
+transform:translateY(-10px);
+
+
+}
+
+
+
+.reference-card h2{
+
+
+color:#66fcf1;
+
+
+}
+
+
+
+.reference-card a{
+
+
+color:white;
+
+
+text-decoration:none;
+
+
+font-weight:bold;
+
+
+}
+
+
+
+.reference-card a:hover{
+
+
+color:#00d2ff;
+
+
+}
+
+/* ==========================
+EXPANDABLE REFERENCE CARDS
+========================== */
+
+.reference-card{
+
+cursor:pointer;
+
+overflow:hidden;
+
+}
+
+.reference-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.toggle-icon{
+
+font-size:2rem;
+
+font-weight:bold;
+
+color:#66fcf1;
+
+transition:.4s;
+
+}
+
+.reference-card.active .toggle-icon{
+
+transform:rotate(45deg);
+
+}
+
+.reference-links{
+
+max-height:0;
+
+overflow:hidden;
+
+opacity:0;
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+margin-top:0;
+
+transition:
+max-height .5s ease,
+opacity .35s ease,
+margin-top .35s ease;
+
+}
+
+.reference-card.active .reference-links{
+
+max-height:900px;
+
+opacity:1;
+
+margin-top:20px;
+
+}
+
+.reference-links a{
+
+display:block;
+
+padding:12px 16px;
+
+border-radius:12px;
+
+background:rgba(102,252,241,.08);
+
+border:1px solid rgba(102,252,241,.25);
+
+color:white;
+
+text-decoration:none;
+
+transition:.3s;
+
+word-break:break-word;
+
+}
+
+.reference-links a:hover{
+
+background:rgba(0,210,255,.22);
+
+color:#66fcf1;
+
+transform:translateX(8px);
+
+box-shadow:0 0 18px rgba(0,210,255,.25);
+
+}
