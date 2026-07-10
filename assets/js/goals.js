@@ -148,7 +148,7 @@ data.forEach(goal=>{
 
 container.innerHTML+=`
 
-<div class="goal-card"
+<div class="sdg-card"
 onclick="openGoal(${goal.id})">
 
 <img src="${goal.icon}">
