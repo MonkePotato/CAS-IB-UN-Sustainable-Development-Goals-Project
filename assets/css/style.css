@@ -256,10 +256,119 @@ cursor:pointer;
 
 .light{
 
-background:#eef7ff;
+.light{
+    background:#f4f9ff;
+    color:#13233a;
+}
 
-color:#111;
+.light .background{
+    background:
+    linear-gradient(120deg,#dff3ff,#edf8ff,#d8f0ff,#f5fbff);
+}
 
+.light nav,
+.light nav.scrolled{
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+.light nav a{
+    color:#16324f;
+}
+
+.light nav a:hover{
+    color:#00a8d6;
+}
+
+.light .logo{
+    color:#0b3d63;
+}
+
+.light .hero{
+    background:
+    linear-gradient(
+        rgba(255,255,255,.55),
+        rgba(235,248,255,.75)
+    ),
+    url("../images/hero/earth.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.light .hero h1,
+.light .hero p{
+    color:#12324b;
+}
+
+.light .hero span{
+    color:#008dbd;
+}
+
+.light .card,
+.light .goal-card,
+.light .action-card,
+.light .image-card{
+    background:rgba(255,255,255,.92);
+    color:#16324f;
+    border:1px solid rgba(0,0,0,.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.light .card:hover,
+.light .goal-card:hover,
+.light .action-card:hover,
+.light .image-card:hover{
+    box-shadow:0 15px 40px rgba(0,150,255,.18);
+}
+
+.light .btn{
+    background:#00a8d6;
+    color:white;
+}
+
+.light .btn:hover{
+    box-shadow:0 0 25px rgba(0,168,214,.45);
+}
+
+.light .secondary{
+    background:white;
+    border:2px solid #00a8d6;
+    color:#008dbd;
+}
+
+.light .secondary:hover{
+    background:#00a8d6;
+    color:white;
+}
+
+.light footer{
+    background:#dceffd;
+    border-top:1px solid rgba(0,0,0,.08);
+}
+
+.light footer p{
+    color:#35536d;
+}
+
+.light footer strong{
+    color:#008dbd;
+}
+
+.light #theme-toggle{
+    color:#16324f;
+}
+
+.light .nav-links{
+    background:rgba(255,255,255,.96);
+}
+
+.light .nav-links a{
+    color:#16324f;
+}
+
+.light .nav-links a:hover{
+    color:#00a8d6;
 }
 
 
