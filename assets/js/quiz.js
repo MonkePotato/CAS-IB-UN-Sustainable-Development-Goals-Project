@@ -49,8 +49,66 @@ answers:[
 "Goal 8"
 ],
 correct:0
-}
+},
 
+{
+  question: "Which SDG focuses on 'Zero Hunger'?",
+  answers: [
+    "Goal 2",
+    "Goal 6",
+    "Goal 9",
+    "Goal 15"
+  ],
+  correct: 0
+},
+
+
+{
+  question: "What does the 'S' stand for in SDG?",
+  answers: [
+    "Social",
+    "Systematic",
+    "Sustainable",
+    "Scientific"
+  ],
+  correct: 2
+},
+
+
+{
+  question: "Which goal aims to ensure inclusive and equitable quality education?",
+  answers: [
+    "Goal 1",
+    "Goal 4",
+    "Goal 8",
+    "Goal 12"
+  ],
+  correct: 1
+},
+
+
+{
+  question: "Which goal focuses on gender equality?",
+  answers: [
+    "Goal 5",
+    "Goal 10",
+    "Goal 11",
+    "Goal 17"
+  ],
+  correct: 0
+},
+
+
+{
+  question: "What is the global target year to achieve all 17 SDGs?",
+  answers: [
+    "2025",
+    "2030",
+    "2040",
+    "2050"
+  ],
+  correct: 1
+}
 
 ];
 
@@ -182,7 +240,7 @@ message=
 
 }
 
-else if(score>=2){
+else if(score>=5){
 
 message=
 "Great understanding! Keep learning and taking action.";
