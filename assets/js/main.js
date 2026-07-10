@@ -1,115 +1,76 @@
-const toggle =
-document.querySelector(".menu-toggle");
+const menuToggle=document.querySelector(".menu-toggle");
 
+const navLinks=document.querySelector(".nav-links");
 
-const nav =
-document.querySelector(".nav-links");
+if(menuToggle&&navLinks){
 
+menuToggle.addEventListener("click",()=>{
 
+navLinks.classList.toggle("active");
 
-if(toggle){
-
-toggle.onclick=function(){
-
-nav.classList.toggle("active");
+});
 
 }
 
-}
+const themeButton=document.getElementById("theme-toggle");
 
-
-
-
-
-const themeButton =
-document.getElementById("theme-toggle");
-
-
-
-if(themeButton){
-
-
-themeButton.onclick=function(){
-
-
-document.body.classList.toggle("light");
-
-
-localStorage.setItem(
-"theme",
-document.body.classList.contains("light")
-);
-
-
-}
-
-
-}
-
-
-
-
-
-if(
-localStorage.getItem("theme")
-==="true"
-){
+if(localStorage.getItem("theme")==="true"){
 
 document.body.classList.add("light");
 
 }
 
+if(themeButton){
 
+themeButton.addEventListener("click",()=>{
 
+document.body.classList.toggle("light");
 
+localStorage.setItem(
 
-window.addEventListener(
-"scroll",
-()=>{
+"theme",
 
+document.body.classList.contains("light")
 
-const nav =
-document.querySelector("nav");
+);
 
+});
+
+}
+
+const navbar=document.querySelector("nav");
+
+window.addEventListener("scroll",()=>{
+
+if(!navbar)return;
 
 if(window.scrollY>50){
 
-nav.classList.add("scrolled");
+navbar.classList.add("scrolled");
 
 }
 
 else{
 
-nav.classList.remove("scrolled");
+navbar.classList.remove("scrolled");
 
 }
 
-
 });
 
-// Scroll reveal animation
+const revealElements=document.querySelectorAll(
 
+".card, .image-card, .action-card, .subject-grid div, .sdg-card, .resource-card, .reference-card, .reflection-card, .journey-card, .content"
 
-const revealElements =
-document.querySelectorAll(
-".card, .image-card, .action-card, .subject-grid div"
 );
 
-
-
-window.addEventListener(
-"scroll",
-()=>{
-
+function revealOnScroll(){
 
 revealElements.forEach(element=>{
 
+const position=element.getBoundingClientRect().top;
 
-const position =
-element.getBoundingClientRect().top;
-
-
-if(position < window.innerHeight - 100){
+if(position<window.innerHeight-100){
 
 element.style.opacity="1";
 
@@ -117,35 +78,10 @@ element.style.transform="translateY(0)";
 
 }
 
-
 });
-
-
-});
-
-// Mobile navigation
-
-
-const menuToggle =
-document.querySelector(".menu-toggle");
-
-
-const navLinks =
-document.querySelector(".nav-links");
-
-
-
-if(menuToggle){
-
-
-menuToggle.onclick = ()=>{
-
-
-navLinks.classList.toggle("active");
-
-
-};
-
 
 }
 
+window.addEventListener("scroll",revealOnScroll);
+
+window.addEventListener("load",revealOnScroll);
