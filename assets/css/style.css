@@ -1,13 +1,55 @@
+/* =========================================================
+   ROOT VARIABLES (Dark Mode Default)
+   ========================================================= */
+:root {
+  --bg-body: #050816;
+  --bg-gradient: linear-gradient(120deg, #00152d, #021e44, #002855, #00152d);
+  --bg-nav: rgba(0, 0, 0, 0.5);
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --bg-footer: #01040e;
+  
+  --text-main: #ffffff;
+  --text-secondary: #cccccc;
+  --text-heading: #ffffff;
+  
+  --accent: #66fcf1;
+  --accent-shadow: #00d2ff;
+  --border: rgba(255, 255, 255, 0.15);
+  --shadow-card: 0 0 30px rgba(0, 210, 255, 0.2);
+}
+
+/* LIGHT MODE OVERRIDES (Simply change the variables here) */
+.light {
+  --bg-body: #f4f7f6;
+  --bg-gradient: linear-gradient(120deg, #e0e7e7, #d1d9d9, #c4cccc, #e0e7e7);
+  --bg-nav: rgba(255, 255, 255, 0.7);
+  --bg-card: rgba(0, 0, 0, 0.05);
+  --bg-footer: #d9e0e0;
+  
+  --text-main: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-heading: #0a0a0a;
+  
+  --accent: #0c5c69;
+  --accent-shadow: rgba(12, 92, 105, 0.3);
+  --border: rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================
+   BASE STYLES
+   ========================================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  background: #050816;
-  color: white;
+  background: var(--bg-body);
+  color: var(--text-main);
   overflow-x: hidden;
 }
 
@@ -15,132 +57,125 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg, #00152d, #021e44, #002855, #00152d);
+  background: var(--bg-gradient);
   background-size: 400% 400%;
   z-index: -10;
   animation: gradient 15s ease infinite;
 }
 
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px 8%;
   backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, .05);
+  background: var(--bg-nav);
   position: fixed;
   width: 100%;
   z-index: 100;
+  border-bottom: 1px solid var(--border);
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: bold;
+nav.scrolled {
+  background: rgba(0, 0, 0, 0.75); /* Fixed contrast for scroll */
 }
 
-nav ul {
-  display: flex;
-  gap: 35px;
-  list-style: none;
+.light nav.scrolled {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 nav a {
   text-decoration: none;
-  color: white;
-  transition: .3s;
+  color: var(--text-main);
+  transition: 0.3s;
 }
 
 nav a:hover {
-  color: #6ef3ff;
+  color: var(--accent);
 }
 
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
 .hero {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   text-align: center;
   padding: 40px;
+  position: relative;
+  background: linear-gradient(rgba(0, 10, 30, .55), rgba(0, 10, 30, .8)), url("../images/hero/earth.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero h1 {
   font-size: 4rem;
   max-width: 900px;
+  color: white; /* Hero text usually stays white on image */
 }
 
 .hero span {
-  color: #66fcf1;
-}
-
-.hero p {
-  margin-top: 25px;
-  font-size: 1.2rem;
-  opacity: .85;
-  max-width: 700px;
-  margin-inline: auto;
+  color: var(--accent);
 }
 
 .btn {
   display: inline-block;
   margin-top: 40px;
   padding: 15px 35px;
-  background: #00d2ff;
+  background: var(--accent);
   border-radius: 50px;
-  color: black;
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: .3s;
+  transition: 0.3s;
 }
 
-.btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 30px cyan;
+.secondary {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--text-main);
 }
 
-.intro {
-  padding: 120px 10%;
-  text-align: center;
-}
-
-.intro h2 {
-  font-size: 2.8rem;
-  margin-bottom: 25px;
-}
-
-.cards {
-  margin-top: 70px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.card {
+/* =========================================================
+   CARDS & GRIDS
+   ========================================================= */
+.card, .image-card {
   padding: 40px;
-  background: rgba(255, 255, 255, .08);
-  border: 1px solid rgba(255, 255, 255, .15);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 20px;
   backdrop-filter: blur(15px);
-  transition: .4s;
+  transition: 0.4s;
 }
 
-.card:hover {
+.card:hover, .image-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 30px #00d2ff55;
+  box-shadow: var(--shadow-card);
 }
 
+.image-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* =========================================================
+   FOOTER & UTILS
+   ========================================================= */
 footer {
   padding: 50px;
   text-align: center;
-  background: #01040e;
+  background: var(--bg-footer);
   margin-top: 120px;
-}
-
-/* =======================================
-   PART 6 UPGRADES & LIGHT MODE SYSTEM
-======================================= */
-
-nav.scrolled {
-  background: rgba(0, 0, 0, .75);
+  border-top: 1px solid var(--border);
 }
 
 .menu-toggle {
@@ -149,250 +184,31 @@ nav.scrolled {
   cursor: pointer;
 }
 
-#theme-toggle {
-  border: none;
-  background: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* --- DEEPER PASTEL GREENISH-BLUE LIGHT MODE OVERRIDES --- */
-
-/* 1. Base light mode layout (Rich, muted sage/pine pastel) */
-.light {
-  background: #b2c9c9;
-  color: #121f1f;
-}
-
-/* 2. Fluid background mesh utilizing deeper, non-glaring organic teal tones */
-.light .background {
-  background: linear-gradient(120deg, #cbdcdc, #b2c9c9, #99b5b5, #cbdcdc) !important;
-  background-size: 400% 400%;
-}
-
-/* 3. NAVBAR FIX: Clean light backgrounds for seamless navigation viewing */
-.light nav {
-  background: rgba(255, 255, 255, 0.4) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.light nav.scrolled {
-  background: rgba(203, 220, 220, 0.85) !important; 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(25px);
-}
-
-/* 4. Complete typography suite optimized for sharp dark charcoal readability */
-.light h1, 
-.light h2, 
-.light h3, 
-.light p,
-.light .logo {
-  color: #121f1f !important;
-}
-
-/* 5. Navigation link adaptations - Darkened from pale white to rich charcoal tint */
-.light nav a {
-  color: #121f1f !important;
-  font-weight: 500;
-}
-
-.light nav a:hover {
-  color: #0c5c69 !important; 
-}
-
-/* 6. Clean structural containers using distinct light frames and high-contrast text overrides */
-.light .card,
-.light .image-card,
-.light .goal-card,
-.light .action-card {
-  background: #ffffff;
-  border: 1px solid #80a1a1;
-  color: #121f1f !important;
-}
-
-/* Enforce crisp clarity over global opacity values for text */
-.light .card p,
-.light .image-card p {
-  color: #2b3a3a !important;
-  opacity: 1 !important; 
-}
-
-/* 7. Highlights and anchor tag configurations */
-.light .hero span {
-  color: #034c57;
-  font-weight: bold;
-}
-
-.light footer strong {
-  color: #0c5c69;
-}
-
-/* 8. Secondary outline interactive button parameters */
-.light .secondary {
-  border: 2px solid #0c5c69;
-  color: #0c5c69 !important;
-  font-weight: bold;
-}
-
-.light .secondary:hover {
-  background: #0c5c69;
-  color: white !important;
-}
-
-/* 9. Seamless lighter pastel bottom banner anchor */
-.light footer {
-  background: #cbdcdc;
-  border-top: 1px solid #b2c9c9;
-}
-
-.light footer p {
-  color: #121f1f !important;
-  opacity: 1 !important;
-}
-
-/* ------------------------------------------- */
-
+/* =========================================================
+   RESPONSIVENESS
+   ========================================================= */
 @media(max-width: 900px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 80px;
-    right: 0;
-    background: #071426;
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    padding: 30px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-}
-
-/* =====================
-PART 7 VISUAL UPGRADES
-===================== */
-
-.hero {
-  position: relative;
-  background: linear-gradient(rgba(0, 10, 30, .55), rgba(0, 10, 30, .8)), url("../images/hero/earth.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.secondary {
-  background: transparent;
-  border: 2px solid #66fcf1;
-  color: white;
-}
-
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 35px;
-  margin-top: 60px;
-}
-
-.image-card {
-  background: rgba(255, 255, 255, .08);
-  border-radius: 25px;
-  overflow: hidden;
-  transition: .4s;
-}
-
-.image-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 0 40px rgba(0, 210, 255, .4);
-}
-
-.image-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.image-card h3 {
-  margin: 20px;
-}
-
-.image-card p {
-  padding: 0 20px 25px;
-  opacity: .8;
-}
-
-/* ==========================
-FINAL FOOTER DESIGN
-========================== */
-
-footer {
-  padding: 50px 10%;
-  text-align: center;
-  background: rgba(0, 0, 0, .25);
-  border-top: 1px solid rgba(255, 255, 255, .15);
-  margin-top: 80px;
-}
-
-footer p {
-  opacity: .8;
-}
-
-footer strong {
-  color: #66fcf1;
-}
-
-/* ==========================
-MOBILE RESPONSIVENESS
-========================== */
-
-@media(max-width: 900px) {
+  .menu-toggle { display: block; }
+  
   .nav-links {
     position: absolute;
     top: 80px;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, .8);
+    background: var(--bg-body);
     flex-direction: column;
     padding: 30px;
     display: none;
+    border-bottom: 1px solid var(--border);
   }
 
-  .nav-links.active {
-    display: flex;
-  }
+  .nav-links.active { display: flex; }
+  
+  .hero h1 { font-size: 2.5rem; }
+}
 
-  /* Responsive theme color adjustments for mobile navigation dropdown */
-  .light .nav-links {
-    background: #cbdcdc !important;
-    border: 1px solid #80a1a1;
-  }
-
-  .logo {
-    font-size: 1rem;
-  }
-
-  .hero h1,
-  .goals-hero h1,
-  .quiz-hero h1,
-  .resource-hero h1,
-  .reference-hero h1,
-  .reflection-hero h1 {
-    font-size: 2.5rem;
-  }
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
