@@ -156,27 +156,27 @@ nav.scrolled {
   cursor: pointer;
 }
 
-/* --- LIGHT MODE ADJUSTMENTS & FIXED SCROLLBAR --- */
+/* --- ANTI-GLARE GENTLE LIGHT MODE SYSTEM --- */
 
-/* 1. Base light mode color pallet (Softer light blue background instead of harsh white) */
+/* 1. Base light mode color palette (Gentle matte slate-gray tint) */
 .light {
-  background: #dbeafe;
+  background: #f1f5f9;
   color: #0f172a;
 }
 
-/* 2. Soft sky blue moving animation background mesh */
+/* 2. Low-contrast, ultra-soft fluid background mesh (No glaring whites or bright blues) */
 .light .background {
-  background: linear-gradient(120deg, #eff6ff, #dbeafe, #bfdbfe, #eff6ff);
+  background: linear-gradient(120deg, #f8fafc, #f1f5f9, #e2e8f0, #f8fafc);
 }
 
-/* 3. FIX: Keeps navigation bar bright and readable when scrolling down */
+/* 3. Navigation bar fix: Becomes a beautiful, desaturated soft-slate frosted pane when scrolled */
 .light nav.scrolled {
-  background: rgba(219, 234, 254, 0.85); /* Transparent frosted light-blue */
-  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(241, 245, 249, 0.85); 
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(20px);
 }
 
-/* 4. Text global overrides */
+/* 4. Highly scannable, rich charcoal typography */
 .light h1, 
 .light h2, 
 .light h3, 
@@ -185,46 +185,46 @@ nav.scrolled {
   color: #0f172a !important;
 }
 
-/* 5. Navigation link adjustments */
+/* 5. Navigation link structural adjustments */
 .light nav a {
-  color: #1e293b;
+  color: #334155;
 }
 
 .light nav a:hover {
-  color: #1d4ed8; /* Links turn to vibrant royal blue on hover */
+  color: #0284c7; /* Switches to a clean, non-glaring ocean blue on hover */
 }
 
-/* 6. Clean cards layout */
+/* 6. Muted border cards to ground the layout */
 .light .card,
 .light .image-card,
 .light .goal-card,
 .light .action-card {
   background: #ffffff;
-  border: 1px solid #93c5fd;
+  border: 1px solid #cbd5e1;
   color: #0f172a;
 }
 
-/* 7. Highlights and special spans */
+/* 7. Accent elements and strong focus highlights */
 .light .hero span,
 .light footer strong {
-  color: #1d4ed8;
+  color: #0284c7;
 }
 
-/* 8. Outlined buttons styling */
+/* 8. Outlined interactive button settings */
 .light .secondary {
-  border: 2px solid #1d4ed8;
-  color: #1d4ed8;
+  border: 2px solid #0284c7;
+  color: #0284c7;
 }
 
 .light .secondary:hover {
-  background: #1d4ed8;
+  background: #0284c7;
   color: white;
 }
 
-/* 9. Light footer background wrap */
+/* 9. Seamless low-contrast footer anchor */
 .light footer {
-  background: #bfdbfe;
-  border-top: 1px solid #93c5fd;
+  background: #e2e8f0;
+  border-top: 1px solid #cbd5e1;
 }
 
 /* ------------------------------------------- */
