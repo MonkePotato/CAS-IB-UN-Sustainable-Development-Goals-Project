@@ -8,13 +8,11 @@ padding-bottom:60px;
 
 }
 
-
 .quiz-hero h1{
 
 font-size:3.5rem;
 
 }
-
 
 .quiz-container{
 
@@ -26,7 +24,9 @@ padding:50px;
 
 background:
 
-rgba(255,255,255,.08);
+var(--card);
+
+border:1px solid var(--card-border);
 
 border-radius:25px;
 
@@ -35,8 +35,6 @@ backdrop-filter:blur(15px);
 text-align:center;
 
 }
-
-
 
 #answers{
 
@@ -48,15 +46,15 @@ margin:40px 0;
 
 }
 
-
-
 .answer{
 
 padding:20px;
 
 background:
 
-rgba(255,255,255,.1);
+var(--card-secondary);
+
+border:1px solid var(--card-border);
 
 border-radius:15px;
 
@@ -66,27 +64,21 @@ transition:.3s;
 
 }
 
-
-
 .answer:hover{
 
-background:#00d2ff;
+background:var(--accent);
 
-color:black;
+color:var(--accent-text);
 
 }
-
-
 
 .selected{
 
-background:#00d2ff;
+background:var(--accent);
 
-color:black;
+color:var(--accent-text);
 
 }
-
-
 
 button{
 
@@ -96,24 +88,29 @@ border:none;
 
 border-radius:50px;
 
-background:#00d2ff;
+background:var(--accent);
+
+color:var(--accent-text);
 
 font-weight:bold;
 
 cursor:pointer;
 
+transition:.3s;
+
 }
 
+button:hover{
 
+box-shadow:0 0 30px var(--accent-shadow);
+
+}
 
 .hidden{
 
 display:none;
 
 }
-
-
-
 
 .stats{
 
@@ -122,8 +119,6 @@ padding:100px 10%;
 text-align:center;
 
 }
-
-
 
 .stat-grid{
 
@@ -139,26 +134,26 @@ margin-top:40px;
 
 }
 
-
-
 .stat-grid div{
 
 padding:30px;
 
 background:
 
-rgba(255,255,255,.08);
+var(--card);
+
+border:1px solid var(--card-border);
 
 border-radius:20px;
 
+backdrop-filter:blur(15px);
+
 }
-
-
 
 .stat-grid h3{
 
 font-size:3rem;
 
-color:#66fcf1;
+color:var(--accent);
 
 }
